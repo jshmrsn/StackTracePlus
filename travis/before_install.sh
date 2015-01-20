@@ -28,7 +28,12 @@ lua$LUA_SFX -v
 wget http://luarocks.org/releases/$LUAROCKS_BASE.tar.gz
 tar zxvpf $LUAROCKS_BASE.tar.gz
 pushd $LUAROCKS_BASE
-	./configure --lua-version=$LUA_VER --lua-suffix=$LUA_SFX --with-lua-include="$LUA_INCDIR"
+	# esto quedo medio feo
+	if [[ $LUA = "lua5.3" ]]; then
+		./configure --lua-version=$LUA_VER --with-lua-include="$LUA_INCDIR"
+	else
+		./configure --lua-version=$LUA_VER --lua-suffix=$LUA_SFX --with-lua-include="$LUA_INCDIR"
+	fi
 	make build && sudo make install
 popd
 cd $TRAVIS_BUILD_DIR
