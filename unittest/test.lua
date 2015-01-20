@@ -1,4 +1,5 @@
 local STP = require "StackTracePlus"
+local lunit = require "lunit"
 
 module(..., lunit.testcase, package.seeall)
 
