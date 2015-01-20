@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 if [ $LUA = "luajit" ]; then
 	if [ $LUAJIT_VER = "2.0" ]; then
