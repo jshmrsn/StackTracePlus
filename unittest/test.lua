@@ -14,7 +14,7 @@ function testLuaModule()
 	end
 
 	local ok, err = xpcall(f, STP.stacktrace)
-	assert_match( [[t = table module]], err, "" )
+	assert_match( [[t = tablea module]], err, "" )
 end
 
 function testKnownFunction()
