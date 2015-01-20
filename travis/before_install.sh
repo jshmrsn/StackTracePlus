@@ -9,12 +9,7 @@ if [ $LUA = "luajit" ]; then
 	fi
 fi
 
-if [ $LUA = "lua5.1" ] || [ $LUA = "lua5.2" ]; then
-	sudo apt-get install $LUA
-	sudo apt-get install $LUA_DEV
-
-elif [[ $LUA = "lua5.3" ]]; then
-	#statementselif
+if [[ $LUA = "lua5.3" ]]; then
 	LUA_V="5.3.0"
 	wget "http://www.lua.org/ftp/lua-${LUA_V}.tar.gz"
 	tar xf "lua-${LUA_V}.tar.gz"
@@ -22,6 +17,9 @@ elif [[ $LUA = "lua5.3" ]]; then
 		make linux
 		sudo make install
 	popd
+else
+	sudo apt-get install $LUA
+	sudo apt-get install $LUA_DEV
 fi
 lua$LUA_SFX -v
 # Install a recent luarocks release
