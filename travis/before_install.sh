@@ -20,7 +20,7 @@ elif [[ $LUA = "lua5.3" ]]; then
 	tar xf "lua-${LUA_V}.tar.gz"
 	pushd "lua-${LUA_V}"
 		make linux
-		make install
+		sudo make install
 	popd
 fi
 lua$LUA_SFX -v
