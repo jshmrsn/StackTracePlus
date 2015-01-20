@@ -1,3 +1,5 @@
+#!/bin/bash -ex
+
 if [ $LUA = "luajit" ]; then
 	if [ $LUAJIT_VER = "2.0" ]; then
 		sudo add-apt-repository ppa:mwild1/ppa -y && sudo apt-get update -y;
